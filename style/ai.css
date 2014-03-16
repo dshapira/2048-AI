@@ -9,8 +9,13 @@
 }
 
 .ai-button, #feedback-container {
-  background: #E7E1DA;
   border: none;
+  border-radius: 2px;
+  font-size: 1em;
+}
+
+.ai-button {
+  background: #E7E1DA;
   border-radius: 2px;
   font-size: 1em;
   padding: .6em;
