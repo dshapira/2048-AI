@@ -1,0 +1,52 @@
+.audio-controls ul{
+  list-style: none;
+  margin: 0;
+}
+
+.audio-controls ul li{
+  display: inline;
+  margin: 0;
+}
+
+.audio-controls .osc-type-button {
+  font-size: 1em;
+}
+
+/* .toggle-group styles */
+.toggle-group {
+  display: inline-flex;
+  list-style: none;
+  margin: 0px 0px 0px 5px;
+  overflow: hidden;
+  padding: 3px;
+}
+
+.toggle-group li {
+  display:block;
+  float:left;
+}
+
+.toggle-group li button {
+  background: #E7E1DA;
+  border: none;
+  border-radius: 2px;
+  display: block;
+}
+
+.toggle-group li button.active {
+  background: #C6B8A9;
+}
+
+.toggle-group li button:hover {
+  /*background-color: darken($bc1, 5%);*/
+}
+
+.toggle-group li:first-child button {
+  /*@include border-radius($radius: 4px 0px 0px 4px);*/
+  border-right: 0;
+}
+
+.toggle-group li:last-child button {
+  /*@include border-radius($radius: 0px 4px 4px 0px);*/
+}
+/* END .toggle-group styles */

@@ -6,6 +6,7 @@
 
   <link href="style/main.css" rel="stylesheet" type="text/css">
   <link href="style/ai.css" rel="stylesheet" type="text/css">
+  <link href="style/audio.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="favicon.ico">
 
   <meta name="HandheldFriendly" content="True">
@@ -25,28 +26,42 @@
     </div>
     <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
 
-    <div class='controls'>
-      <div id='hint-button-container'>
-        <button id='hint-button' class='ai-button'>Get Hint</button>
-      </div>
-      <div id='feedback-container'> </div>
-      <div id='run-button-container'>
-        <button id='run-button' class='ai-button'>Auto-run</button>
-      </div>
-    </div>
+    <section class="controls">
+      <div class='audio-controls'>
+        <h2>Audio Controls</h2>
+        <form action="">
+          <label>Base Pitch: </label>
+          <input id="pitch-input" type="number" placeholder="36.71"></input>
 
-    <div class='audio-controls'>
-      <form action="">
-        <div class="osc-type-buttons">
-          <button class="osc-type-button" value="sine">Sine</button>
-          <button class="osc-type-button" value="square">Square</button>
-          <button class="osc-type-button" value="sawtooth">Sawtooth</button>
-          <button class="osc-type-button" value="triangle">Triangle</button>
+          <div class="osc-type-buttons">
+            <label>Oscillator type: </label>
+            <ul class="toggle-group">
+              <li><button class="osc-type-button active" value="sine">Sine</button></li>
+              <li><button class="osc-type-button" value="square">Square</button></li>
+              <li><button class="osc-type-button" value="sawtooth">Sawtooth</button></li>
+              <li><button class="osc-type-button" value="triangle">Triangle</button></li>
+            </ul>
+<!--             <ul>
+              <li class="osc-type-button" value="sine">Sine</li>
+              <li class="osc-type-button" value="square">Square</li>
+              <li class="osc-type-button" value="sawtooth">Sawtooth</li>
+              <li class="osc-type-button" value="triangle">Triangle</li>
+            </ul> -->
+          </div>
+
+        </form>
+      </div>
+      <div class='ai-controls'>
+        <h2>AI Controls</h2>
+        <div id='hint-button-container'>
+          <button id='hint-button' class='ai-button'>Get Hint</button>
         </div>
-        <label>Base Pitch: </label>
-        <input id="pitch-input" type="number" placeholder="36.71"></input>
-      </form>
-    </div>
+        <div id='feedback-container'> </div>
+        <div id='run-button-container'>
+          <button id='run-button' class='ai-button'>Auto-run</button>
+        </div>
+      </div>
+    </section>
 
     <div class="game-container">
       <div class="game-message">

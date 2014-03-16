@@ -1,11 +1,18 @@
 .controls {
-  margin-top: 1em;
+  margin-top: .5em;
   padding: 0.5em;
   overflow: auto;
 }
 
 .ai-button, #feedback-container {
-  font-size: xx-large;
+  background: #E7E1DA;
+  border: none;
+  border-radius: 2px;
+  font-size: 1em;
+}
+
+.ai-button.active {
+  background: #C6B8A9;
 }
 
 #run-button-container {

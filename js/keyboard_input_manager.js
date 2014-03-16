@@ -71,6 +71,16 @@ KeyboardInputManager.prototype.listen = function () {
   var oscTypeButtonWrapper = document.querySelectorAll(".osc-type-buttons")[0];
   oscTypeButtonWrapper.addEventListener('click', function(e) {
     e.preventDefault();
+
+    var buttonItems = document.querySelectorAll(".osc-type-button");
+    for (var i=0, j=buttonItems.length; i<j; i++){
+        var button = buttonItems[i];
+        if (button.className) {
+            button.className = button.className.replace(/\bactive\b/, '');
+        }
+    }
+
+    e.srcElement.className += ' active';
     self.emit('oscTypeChange', e.srcElement.value);
   })
 

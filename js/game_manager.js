@@ -26,11 +26,11 @@ function GameManager(size, InputManager, Actuator, OscBank) {
   this.inputManager.on('run', function() {
     if (this.running) {
       this.running = false;
-      this.actuator.setRunButton('Auto-run');
+      this.actuator.setRunButton('Auto-run', '');
     } else {
       this.running = true;
       this.run()
-      this.actuator.setRunButton('Stop');
+      this.actuator.setRunButton('Stop', ' active');
     }
   }.bind(this));
 
@@ -41,7 +41,7 @@ function GameManager(size, InputManager, Actuator, OscBank) {
 GameManager.prototype.restart = function () {
   this.actuator.restart();
   this.running = false;
-  this.actuator.setRunButton('Auto-run');
+  this.actuator.setRunButton('Auto-run', '');
   this.setup();
 };
 

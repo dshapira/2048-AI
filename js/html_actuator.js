@@ -142,6 +142,9 @@ HTMLActuator.prototype.showHint = function(hint) {
   document.getElementById('feedback-container').innerHTML = ['↑','→','↓','←'][hint];
 }
 
-HTMLActuator.prototype.setRunButton = function(message) {
-  document.getElementById('run-button').innerHTML = message;
+HTMLActuator.prototype.setRunButton = function(message, buttonClass) {
+  var runButton = document.getElementById('run-button');
+  runButton.innerHTML = message;
+  runButton.className = runButton.className.replace(/\b active\b/, '');
+  runButton.className += buttonClass;
 }
