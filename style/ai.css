@@ -1,7 +1,11 @@
 .controls {
-  margin-top: .5em;
+  /*margin-top: .5em;*/
   padding: 0.5em;
   overflow: auto;
+}
+
+.controls h2{
+  margin-bottom: .5em;
 }
 
 .ai-button, #feedback-container {
@@ -9,6 +13,7 @@
   border: none;
   border-radius: 2px;
   font-size: 1em;
+  padding: .6em;
 }
 
 .ai-button.active {

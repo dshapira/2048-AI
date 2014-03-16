@@ -156,7 +156,7 @@ hr {
 // Game field mixin used to render CSS at different width
 @mixin game-field {
   .game-container {
-    margin-top: 40px;
+    margin-top: 20px;
     position: relative;
     padding: $grid-spacing;
 

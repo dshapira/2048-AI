@@ -8,6 +8,15 @@
   margin: 0;
 }
 
+.audio-controls #pitch-input {
+  font-size: 1em;
+  margin-left: 7%;
+}
+
+.audio-controls .osc-type-buttons {
+  margin-top: .5em;
+}
+
 .audio-controls .osc-type-button {
   font-size: 1em;
 }
@@ -29,8 +38,11 @@
 .toggle-group li button {
   background: #E7E1DA;
   border: none;
-  border-radius: 2px;
+  border-right: 1px solid #D7D1CA;
   display: block;
+  margin: 0px;
+  padding: .6em;
+  text-decoration: none;
 }
 
 .toggle-group li button.active {
@@ -43,10 +55,14 @@
 
 .toggle-group li:first-child button {
   /*@include border-radius($radius: 4px 0px 0px 4px);*/
-  border-right: 0;
+  border-left: 0;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
 }
 
 .toggle-group li:last-child button {
-  /*@include border-radius($radius: 0px 4px 4px 0px);*/
+  border-right: 0;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
 }
 /* END .toggle-group styles */
