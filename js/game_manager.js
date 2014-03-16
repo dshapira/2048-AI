@@ -9,6 +9,14 @@ function GameManager(size, InputManager, Actuator, OscBank) {
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
 
+  this.inputManager.on('oscTypeChange', function(oscType) {
+    this.oscBank.changeOscType(oscType);
+  }.bind(this));
+
+  this.inputManager.on('oscPitch', function(oscPitch) {
+    this.oscBank.changeOscPitch(oscPitch);
+  }.bind(this));
+
   this.inputManager.on('think', function() {
     var best = this.ai.getBest();
     this.actuator.showHint(best.move);

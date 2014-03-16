@@ -68,6 +68,17 @@ KeyboardInputManager.prototype.listen = function () {
     self.emit('run')
   })
 
+  var oscTypeButtonWrapper = document.querySelectorAll(".osc-type-buttons")[0];
+  oscTypeButtonWrapper.addEventListener('click', function(e) {
+    e.preventDefault();
+    self.emit('oscTypeChange', e.srcElement.value);
+  })
+
+  var oscPitchInput = document.getElementById('pitch-input');;
+  oscPitchInput.addEventListener('change', function(e) {
+    e.preventDefault();
+    self.emit('oscPitch', e.srcElement.value);
+  })
 
   // Listen to swipe events
   var gestures = [Hammer.DIRECTION_UP, Hammer.DIRECTION_RIGHT,
@@ -78,7 +89,7 @@ KeyboardInputManager.prototype.listen = function () {
     drag_block_horizontal: true,
     drag_block_vertical: true
   });
-  
+
   handler.on("swipe", function (event) {
     event.gesture.preventDefault();
     mapped = gestures.indexOf(event.gesture.direction);

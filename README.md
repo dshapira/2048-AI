@@ -2,7 +2,7 @@
 
 Audio addition to the game [2048](https://github.com/gabrielecirulli/2048).
 
-AI created for the game by Matt Overlan[2048](https://github.com/ov3y/2048-AI).
+AI created for the game by Matt Overlan [2048](https://github.com/ov3y/2048-AI).
 
 See it in action [here](http://dshapira.github.io/2048-audio/). (Hit the auto-run button to let the AI attempt to solve it by itself)
 

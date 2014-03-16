@@ -9,11 +9,11 @@ function OscBank(size) {
 
   this.oscBank = [];
   this.ampBank = [];
+  this.oscType = 0;
   this.audioPlaying = true;
   this.freqBase = 36.71;
 
   this.setup();
-  window.oscBank = this.oscBank;
 }
 
 OscBank.prototype.setup = function () {
@@ -42,6 +42,7 @@ OscBank.prototype.buildBank = function () {
       var osc = this.audioContext.createOscillator();
       var amp = this.audioContext.createGain();
 
+      osc.type = this.oscType;
       osc.frequency.value = this.freqBase;
       amp.gain.value = baseAmpValue;
       amp.connect(this.masterAmp);
@@ -86,4 +87,26 @@ OscBank.prototype.update = function (grid, metadata) {
 
 OscBank.prototype.calFreq = function (cellValue) {
   return this.freqBase * (Math.log(cellValue) / Math.log(2));
+}
+
+OscBank.prototype.changeOscType = function (oscType) {
+  var self = this;
+  self.oscType = oscType;
+
+  this.oscBank.forEach(function (column) {
+    column.forEach(function (osc) {
+      osc.type = self.oscType;
+    });
+  });
+}
+
+OscBank.prototype.changeOscPitch = function (oscPitch) {
+  var self = this;
+  self.freqBase = oscPitch;
+
+  this.oscBank.forEach(function (column) {
+    column.forEach(function (osc) {
+      osc.frequency.value = self.freqBase;
+    });
+  });
 }
