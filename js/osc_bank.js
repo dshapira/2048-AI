@@ -9,7 +9,7 @@ function OscBank(size) {
 
   this.oscBank = [];
   this.ampBank = [];
-  this.oscType = 0;
+  this.oscType = 'sawtooth';
   this.audioPlaying = true;
   this.freqBase = 36.71;
 

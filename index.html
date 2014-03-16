@@ -28,17 +28,17 @@
 
     <section class="controls">
       <div class='audio-controls'>
-        <h2>Audio Controls</h2>
+        <h2>Audio Drone Controls</h2>
         <form action="">
           <label>Base Pitch: </label>
-          <input id="pitch-input" type="number" placeholder="36.71"></input>
-
+          <input id="pitch-input" type="number" value="36.71"></input>
+          <input id="pitch-slider" type="range" min="36.71" max="500" value="0" step="5" />
           <div class="osc-type-buttons">
             <label>Oscillator type: </label>
             <ul class="toggle-group">
-              <li><button class="osc-type-button active" value="sine">Sine</button></li>
+              <li><button class="osc-type-button" value="sine">Sine</button></li>
               <li><button class="osc-type-button" value="square">Square</button></li>
-              <li><button class="osc-type-button" value="sawtooth">Sawtooth</button></li>
+              <li><button class="osc-type-button active" value="sawtooth">Sawtooth</button></li>
               <li><button class="osc-type-button" value="triangle">Triangle</button></li>
             </ul>
           </div>
@@ -108,7 +108,7 @@
     AI solver by <a href="https://github.com/ov3y/2048-AI">Matt Overlan</a>
     </p>
     <p>
-    Audio by by <a href="https://github.com/dshapira/2048-audio">Daniel Shapira</a>
+    Audio Drone by <a href="https://github.com/dshapira/2048-audio">Daniel Shapira</a>
     </p>
 
     <div class="sharing">

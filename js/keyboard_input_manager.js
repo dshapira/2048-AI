@@ -84,10 +84,19 @@ KeyboardInputManager.prototype.listen = function () {
     self.emit('oscTypeChange', e.srcElement.value);
   })
 
-  var oscPitchInput = document.getElementById('pitch-input');;
+  var oscPitchInput = document.getElementById('pitch-input');
   oscPitchInput.addEventListener('change', function(e) {
     e.preventDefault();
     self.emit('oscPitch', e.srcElement.value);
+  })
+
+  var oscPitchSlider = document.getElementById('pitch-slider');
+  oscPitchSlider.addEventListener('change', function(e) {
+    e.preventDefault();
+
+    var pitchValue = e.srcElement.value;
+    document.getElementById('pitch-input').value = pitchValue;
+    self.emit('oscPitch', pitchValue);
   })
 
   // Listen to swipe events
