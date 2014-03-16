@@ -1,7 +1,8 @@
-function GameManager(size, InputManager, Actuator) {
+function GameManager(size, InputManager, Actuator, OscBank) {
   this.size         = size; // Size of the grid
   this.inputManager = new InputManager;
   this.actuator     = new Actuator;
+  this.oscBank      = new OscBank(size);
 
   this.running      = false;
 
@@ -61,6 +62,15 @@ GameManager.prototype.actuate = function () {
   });
 };
 
+// Sends the updated grid to the OscBank
+GameManager.prototype.updateOscBank = function () {
+  this.oscBank.update(this.grid, {
+    score: this.score,
+    over:  this.over,
+    won:   this.won
+  });
+};
+
 // makes a given move and updates state
 GameManager.prototype.move = function(direction) {
   var result = this.grid.move(direction);
@@ -81,6 +91,7 @@ GameManager.prototype.move = function(direction) {
   }
 
   this.actuate();
+  this.updateOscBank();
 }
 
 // moves continuously until game is over
