@@ -60,6 +60,10 @@ OscBank.prototype.update = function (grid, metadata) {
   var self = this;
   var activeCells = 0;
 
+  if(self.audioContext.state === 'suspended') {
+    self.audioContext.resume();
+  }
+
   // count active cells
   grid.cells.forEach(function (column, column_index) {
     column.forEach(function (cell, row_index) {
